@@ -9,8 +9,8 @@
 	
 	<body>
 		<h1>お問い合わせフォーム</h1>
-		
-		<form action="/contact/confirm" method="post">
+		<%--↓プロジェクト名マスト --%>
+		<form action="/contact-form/contact/confirm" method="post">
 		
 			<p>
 				名前<br>
@@ -47,6 +47,7 @@
 				  <option value="中国">中国</option>
 				  <option value="四国">四国</option>
 				  <option value="九州">九州</option>
+				  <option value="沖縄">沖縄</option>
 				</select><br>
 			 </div>
 			 
@@ -61,5 +62,4 @@
 		
 		</form>
 	</body>
-
 </html>
