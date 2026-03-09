@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="/contact-form/css/style.css">
 		<title>Insert title here</title>
 	</head>
 	
@@ -13,23 +15,23 @@
 		<form action="/contact-form/contact/confirm" method="post">
 		
 			<p>
-				名前<br>
+				<strong>名前</strong><br>
 				<input type="text" name="name">
 			</p>
 			
 			<p>
-				メールアドレス<br>
+				<strong>メールアドレス</strong><br>
 				<input type="email" name="email_address">
 			</p>
 			
 			<p>
-				性別<br>
+				<strong>性別</strong><br>
 				<input type="radio" name="sex" value="man" >男
 				<input type="radio" name="sex" value="woman" >女<br>
 			</p>
 			
 			<p>
-				お問い合わせ種別<br>
+				<strong>お問い合わせ種別</strong><br>
 				<input type="checkbox" name="cates" value="seihin">製品について
 				<input type="checkbox" name="cates" value="sa-bis">サービスについて
 				<input type="checkbox" name="cates" value="saiyou">採用について
@@ -37,7 +39,7 @@
 			</p>	
 				
 			<div>
-				住所<br>
+				<strong>住所</strong><br>
 				<select name="pref">
 				  <option value="北海道">北海道</option>
 				  <option value="東北">東北</option>
@@ -52,7 +54,7 @@
 			 </div>
 			 
 			 <p>
-			 	お問い合わせ内容<br>
+			 	<strong>お問い合わせ内容</strong><br>
 			 	<textarea name = "msg" rows="5" cols="50">入力欄</textarea><br>
 			 </p>
 			

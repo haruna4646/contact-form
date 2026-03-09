@@ -36,7 +36,7 @@ public class ConfirmServlet extends HttpServlet {
     	}else {
     		sexDisplay= "女";
     	}
-
+   
     	// Bean にセット
     	ContactBean contact = new ContactBean();
     	contact.setName(name);
@@ -49,19 +49,24 @@ public class ConfirmServlet extends HttpServlet {
     	// 配列ループ処理（お問い合わせ種別）
     	String catesHtml = "";
     	if (selectedCates != null) {
-    	    catesHtml = Arrays.stream(selectedCates)  //配列をループ処理できる形にしてる
-    	                      .map(c -> c + "<input type='hidden' name='cates' value='" + c + "'> ")  //HTMLに変換
-    	                      .collect(Collectors.joining());  //１つの文字列に変換
-    	}
-    	
-    	// JSP に渡す
-    	request.setAttribute("contact", contact);
-    	request.setAttribute("catesHtml", catesHtml);
-    	
-    	// フォワード（画面に移す）
-    	RequestDispatcher dispatcher =
-    	        request.getRequestDispatcher("/WEB-INF/jsp/confirm.jsp");
+    	    catesHtml = Arrays.stream(selectedCates) //配列をループ処理できる形にしてる
+    	    		.map(c -> {
+                        switch(c) {
+                            case "seihin": return "・製品について";
+                            case "sa-bis": return "・サービスについて";
+                            case "saiyou": return "・採用について";
+                            case "sonota": return "・その他";
+                            default: return "";
+                        }
+                    })
+                    .collect(Collectors.joining("<br>"));
+        }
+        contact.setCatesHtml(catesHtml);
 
-    	dispatcher.forward(request, response);
+        request.setAttribute("contact", contact);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/confirm.jsp");
+        dispatcher.forward(request, response);
     }
 }
+    	                    

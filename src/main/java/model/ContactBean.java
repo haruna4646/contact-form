@@ -1,17 +1,16 @@
 package model;
 
-import java.io.Serializable;
+public class ContactBean {
 
-public class ContactBean implements Serializable {
+    private String name;
+    private String emailAddress;
+    private String sex;
+    private String[] cates;     // キー配列（Confirmから送信）
+    private String catesHtml;   // 表示用日本語文字列
+    private String pref;
+    private String message;
 
-    private String name;            // 名前
-    private String emailAddress;    // メールアドレス
-    private String sex;             // 性別
-    private String[] cates;         // お問い合わせ種別（複数チェック可能）
-    private String pref;            // 住所
-    private String message;         // お問い合わせ内容
-
-    //getter / setter
+    // 名前
     public String getName() {
         return name;
     }
@@ -19,6 +18,7 @@ public class ContactBean implements Serializable {
         this.name = name;
     }
 
+    // メールアドレス
     public String getEmailAddress() {
         return emailAddress;
     }
@@ -26,6 +26,7 @@ public class ContactBean implements Serializable {
         this.emailAddress = emailAddress;
     }
 
+    // 性別
     public String getSex() {
         return sex;
     }
@@ -33,6 +34,7 @@ public class ContactBean implements Serializable {
         this.sex = sex;
     }
 
+    // お問い合わせ種別（キー配列）
     public String[] getCates() {
         return cates;
     }
@@ -40,6 +42,15 @@ public class ContactBean implements Serializable {
         this.cates = cates;
     }
 
+    // お問い合わせ種別
+    public String getCatesHtml() {
+        return catesHtml;
+    }
+    public void setCatesHtml(String catesHtml) {
+        this.catesHtml = catesHtml;
+    }
+
+    // 住まいエリア
     public String getPref() {
         return pref;
     }
@@ -47,10 +58,19 @@ public class ContactBean implements Serializable {
         this.pref = pref;
     }
 
+    // メッセージ
     public String getMessage() {
         return message;
     }
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    // 配列 cates を改行付き文字列に変換
+    public String getCatesText() {
+        if (cates == null) {
+            return "";
+        }
+        return String.join("<br>", cates);
     }
 }
