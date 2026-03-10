@@ -5,8 +5,8 @@ public class ContactBean {
     private String name;
     private String emailAddress;
     private String sex;
-    private String[] cates;     // キー配列（Confirmから送信）
-    private String catesHtml;   // 表示用日本語文字列
+    private String[] cates;     // 送信用
+    private String catesHtml;   // 表示用文字列
     private String pref;
     private String message;
 
@@ -34,7 +34,7 @@ public class ContactBean {
         this.sex = sex;
     }
 
-    // お問い合わせ種別（キー配列）
+    // お問い合わせ種別（送信用）
     public String[] getCates() {
         return cates;
     }
@@ -42,7 +42,7 @@ public class ContactBean {
         this.cates = cates;
     }
 
-    // お問い合わせ種別
+    // お問い合わせ種別（表示用）
     public String getCatesHtml() {
         return catesHtml;
     }
@@ -50,7 +50,7 @@ public class ContactBean {
         this.catesHtml = catesHtml;
     }
 
-    // 住まいエリア
+    // エリア
     public String getPref() {
         return pref;
     }

@@ -51,16 +51,16 @@
 				  <option value="九州">九州</option>
 				  <option value="沖縄">沖縄</option>
 				</select><br>
-			 </div>
+			</div>
 			 
-			 <p>
+			<p>
 			 	<strong>お問い合わせ内容</strong><br>
 			 	<textarea name = "msg" rows="5" cols="50">入力欄</textarea><br>
-			 </p>
+			</p>
 			
-			 <p>
+			<p>
 				<button type="submit">確認画面へ</button>
-			 </p>
+			</p>
 		
 		</form>
 	</body>

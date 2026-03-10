@@ -33,7 +33,6 @@
 		        <input type="hidden" name="pref" value="${contact.pref}">
 		
 		        <p><span>お問い合わせ内容：</span></p>
-		        <%--複数行書けるcss --%>
 		        <p class="message">${contact.message}</p>
 		        <input type="hidden" name="msg" value="${contact.message}">
 		
